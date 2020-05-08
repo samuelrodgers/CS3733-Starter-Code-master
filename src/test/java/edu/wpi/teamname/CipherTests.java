@@ -1,10 +1,8 @@
 package edu.wpi.teamname;
 
-import static junit.framework.TestCase.assertTrue;
-
 import edu.wpi.teamname.entity.CaesarCipher;
 import edu.wpi.teamname.entity.ElbonianCipher;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 /**
  * Tests for your cipher functions; make sure your code works! Test-driven development is a good
@@ -21,18 +19,24 @@ public class CipherTests {
     assertTrue(elbonianTest2());
   }
 
+  @Test
+  private void assertTrue(boolean caesarTest1) {}
+
+  @Test
   public boolean caesarTest1() {
     CaesarCipher caesar = new CaesarCipher();
     caesar.setText("This is a boring message!");
     return caesar.getText().equals("Gsrh rh z ylirmt nvhhztv!");
   }
 
+  @Test
   public boolean caesarTest2() {
     CaesarCipher caesar = new CaesarCipher();
     caesar.setText("Don't fall over the railing");
     return caesar.getText().equals("Kvu'a mhss vcly aol yhpspun");
   }
 
+  @Test
   public boolean caesarTest3() {
     CaesarCipher caesar = new CaesarCipher();
     caesar.setText("S&P500");

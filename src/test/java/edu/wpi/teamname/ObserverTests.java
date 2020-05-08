@@ -1,9 +1,9 @@
 package edu.wpi.teamname;
 
-import static junit.framework.TestCase.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import edu.wpi.teamname.entity.*;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 /**
  * Tests for your observer pattern; make sure your code works! Test-driven development is a good
