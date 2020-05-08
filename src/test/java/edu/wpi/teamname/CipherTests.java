@@ -14,30 +14,30 @@ import org.junit.Test;
 public class CipherTests {
 
   @Test
-  public void cipherSimpleTest1() {
-    assertTrue(ceasarTest1());
-    assertTrue(ceasarTest2());
-    assertTrue(ceasarTest3());
+  public void cipherSetTextTests() {
+    assertTrue(caesarTest1());
+    assertTrue(caesarTest2());
+    assertTrue(caesarTest3());
     assertTrue(elbonianTest1());
     assertTrue(elbonianTest2());
   }
 
-  public boolean ceasarTest1() {
-    CaesarCipher ceasar = new CaesarCipher();
-    ceasar.setText("This is a boring message!");
-    return ceasar.getText().equals("Gsrh rh z ylirmt nvhhztv!");
+  public boolean caesarTest1() {
+    CaesarCipher caesar = new CaesarCipher();
+    caesar.setText("This is a boring message!");
+    return caesar.getText().equals("Gsrh rh z ylirmt nvhhztv!");
   }
 
-  public boolean ceasarTest2() {
-    CaesarCipher ceasar = new CaesarCipher();
-    ceasar.setText("Don't fall over the railing");
-    return ceasar.getText().equals("Kvu'a mhss vcly aol yhpspun");
+  public boolean caesarTest2() {
+    CaesarCipher caesar = new CaesarCipher();
+    caesar.setText("Don't fall over the railing");
+    return caesar.getText().equals("Kvu'a mhss vcly aol yhpspun");
   }
 
-  public boolean ceasarTest3() {
-    CaesarCipher ceasar = new CaesarCipher();
-    ceasar.setText("S&P500");
-    return ceasar.getText().equals("Z&W500");
+  public boolean caesarTest3() {
+    CaesarCipher caesar = new CaesarCipher();
+    caesar.setText("S&P500");
+    return caesar.getText().equals("Z&W500");
   }
 
   public boolean elbonianTest1() {
