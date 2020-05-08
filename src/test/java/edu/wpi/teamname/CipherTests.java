@@ -1,10 +1,10 @@
 package edu.wpi.teamname;
 
-import static junit.framework.TestCase.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import edu.wpi.teamname.entity.CaesarCipher;
 import edu.wpi.teamname.entity.ElbonianCipher;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 /**
  * Tests for your cipher functions; make sure your code works! Test-driven development is a good
