@@ -1,6 +1,9 @@
 package edu.wpi.teamname;
 
-import static junit.framework.TestCase.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import edu.wpi.teamname.entity.*;
+import org.junit.jupiter.api.Test;
 
 import edu.wpi.teamname.entity.*;
 import org.junit.Test;
