@@ -1,6 +1,5 @@
 package edu.wpi.teamname;
 
-import static junit.framework.TestCase.assertEquals;
 import static junit.framework.TestCase.assertTrue;
 
 import edu.wpi.teamname.entity.CaesarCipher;
