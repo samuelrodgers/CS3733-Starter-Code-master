@@ -1,19 +1,20 @@
-import edu.wpi.cs3733.entity.*;
-import org.junit.Test;
+package edu.wpi.teamname;
 
-import static junit.framework.TestCase.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import edu.wpi.teamname.entity.*;
+import org.junit.jupiter.api.Test;
 
 /**
- * Tests for your observer pattern; make sure your code works!
- * Test-driven development is a good idea here.
+ * Tests for your observer pattern; make sure your code works! Test-driven development is a good
+ * idea here.
  */
 public class ObserverTests {
 
-    @Test
-    public void testSetText() {
-        Message message = new Message();
-        message.setText("");
-        assertEquals("", message.getText());
-    }
-
+  @Test
+  public void testSetText() {
+    Message message = new Message();
+    message.setText("");
+    assertEquals("", message.getText());
+  }
 }
