@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="edu.wpi.teamname.CipherTests" tests="1" skipped="0" failures="1" errors="0" timestamp="2020-05-09T03:51:16" hostname="DESKTOP-SN6T8RQ" time="0.042">
+<testsuite name="edu.wpi.teamname.CipherTests" tests="1" skipped="0" failures="1" errors="0" timestamp="2020-05-09T07:18:05" hostname="DESKTOP-SN6T8RQ" time="0.04">
   <properties/>
-  <testcase name="elbonianTest1()" classname="edu.wpi.teamname.CipherTests" time="0.042">
+  <testcase name="elbonianTest2()" classname="edu.wpi.teamname.CipherTests" time="0.04">
     <failure message="java.lang.IndexOutOfBoundsException" type="java.lang.IndexOutOfBoundsException">java.lang.IndexOutOfBoundsException
 	at java.base/java.io.CharArrayReader.read(CharArrayReader.java:126)
 	at edu.wpi.teamname.entity.ElbonianCipher.setText(ElbonianCipher.java:53)
-	at edu.wpi.teamname.CipherTests.elbonianTest1(CipherTests.java:69)
+	at edu.wpi.teamname.CipherTests.elbonianTest2(CipherTests.java:75)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
