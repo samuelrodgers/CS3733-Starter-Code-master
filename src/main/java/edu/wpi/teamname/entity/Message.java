@@ -3,7 +3,6 @@ package edu.wpi.teamname.entity;
 import java.awt.*;
 import java.util.ArrayList;
 
-
 /** Message class to hold clear text; you must implement the rest of the class */
 public class Message implements Observable {
 
@@ -23,11 +22,11 @@ public class Message implements Observable {
 
   @Override
   public void register(Observer o) {
-   // observerList.add(o);
-    if(o.getClass()==CaesarCipher.class){
-        this.caesarCipher = (CaesarCipher) o;
+    // observerList.add(o);
+    if (o.getClass() == CaesarCipher.class) {
+      this.caesarCipher = (CaesarCipher) o;
     }
-    if(o.getClass()==ElbonianCipher.class){
+    if (o.getClass() == ElbonianCipher.class) {
       this.elbonianCipher = (ElbonianCipher) o;
     }
   }

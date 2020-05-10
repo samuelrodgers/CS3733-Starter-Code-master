@@ -1,13 +1,12 @@
 package edu.wpi.teamname;
 
 import edu.wpi.teamname.entity.*;
+import java.net.URL;
+import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
-
-import java.net.URL;
-import java.util.ResourceBundle;
 
 /** Cipher application controller; don't modify this file (except for note below) */
 public class CipherController implements Initializable {
@@ -25,7 +24,6 @@ public class CipherController implements Initializable {
   public CipherController() {
     cleartext = new Message();
 
-
     /*
      * You may add additional code here if it relates to your observer pattern implementation.
      */
@@ -41,16 +39,17 @@ public class CipherController implements Initializable {
     cleartext.register(caesarCipher);
     cleartext.register(elbonianCipher);
 
-    textInputBox.textProperty().addListener((observable, old, ne) -> {
-      if (ne.isBlank()) {
-        cleartext.setText("");
-      } else {
-        cleartext.setText(ne);
-      }
-    });
-
+    textInputBox
+        .textProperty()
+        .addListener(
+            (observable, old, ne) -> {
+              if (ne.isBlank()) {
+                cleartext.setText("");
+              } else {
+                cleartext.setText(ne);
+              }
+            });
   }
-
 
   /**
    * Runs once every time the text in the input box changes. Your observer pattern implementation

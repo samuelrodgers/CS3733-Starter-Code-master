@@ -1,10 +1,9 @@
 package edu.wpi.teamname.entity;
 
-import javafx.scene.control.TextArea;
-
 import java.io.CharArrayReader;
 import java.io.IOException;
 import java.util.ArrayList;
+import javafx.scene.control.TextArea;
 
 /** Elbonian cipher; you must implement the cipher and the observer pattern */
 public class ElbonianCipher implements Observer {

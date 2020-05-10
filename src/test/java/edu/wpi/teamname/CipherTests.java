@@ -39,12 +39,12 @@ public class CipherTests {
   public void caesarTest3() {
     CaesarCipher caesar = new CaesarCipher();
     caesar.setText(
-            "Would you like to know one of the methods cryptologists (people who work with codes) use to decode"
-                    + " messages written in simple codes like this? They scan through the message and look for letters that are "
-                    + "commonly used. Because they know that some letters are used a lot more than others. For example, the letter"
-                    + " E is used more than any other letter in the alphabet. So if they were trying to break this code, which "
-                    + "letter do you think they would find the most? (Hint: remember - the letter E gets replaced with another "
-                    + "letter of the alphabet!");
+        "Would you like to know one of the methods cryptologists (people who work with codes) use to decode"
+            + " messages written in simple codes like this? They scan through the message and look for letters that are "
+            + "commonly used. Because they know that some letters are used a lot more than others. For example, the letter"
+            + " E is used more than any other letter in the alphabet. So if they were trying to break this code, which "
+            + "letter do you think they would find the most? (Hint: remember - the letter E gets replaced with another "
+            + "letter of the alphabet!");
     assertEquals("", caesar.getText());
   }
 
@@ -60,6 +60,13 @@ public class CipherTests {
     CaesarCipher caesar = new CaesarCipher();
     caesar.setText("!!!!!!!");
     assertEquals("!!!!!!!", caesar.getText());
+  }
+
+  @Test
+  public void caesarTest6() {
+    CaesarCipher caesar = new CaesarCipher();
+    caesar.setText("@@@@");
+    assertEquals("", caesar.getText());
   }
 
   @Test
@@ -93,11 +100,13 @@ public class CipherTests {
   @Test
   public void elbonianTest5() {
     ElbonianCipher elbonian = new ElbonianCipher();
-    elbonian.setText("01020304050607!.,;?: 01020304050607!.,;?: 01020304050607!.,;?: 01020304050607!.,;?: " +
-            "01020304050607!.,;?: 01020304050607!.,;?: 01020304050607!.,;?: 01020304050607!.,;?: 01020304050607!.,;?: " +
-            "01020304050607!.,;?: 01020304050607!.,;?: 01020304050607!.,;?: 01020304050607!.,;?: 01020304050607!.,;?: ");
-    assertEquals("_a_b_c_d_e_f!.,;?:S_a_b_c_d_e_f!.,;?:S_a_b_c_d_e_f!.,;?:S_a_b_c_d_e_f!.,;?:S_a_b_c_d_e_f!.,;?:S" +
-            "_a_b_c_d_e_f!.,;?:S_a_b_c_d_e_f!.,;?:S_a_b_c_", elbonian.getText());
+    elbonian.setText(
+        "01020304050607!.,;?: 01020304050607!.,;?: 01020304050607!.,;?: 01020304050607!.,;?: "
+            + "01020304050607!.,;?: 01020304050607!.,;?: 01020304050607!.,;?: 01020304050607!.,;?: 01020304050607!.,;?: "
+            + "01020304050607!.,;?: 01020304050607!.,;?: 01020304050607!.,;?: 01020304050607!.,;?: 01020304050607!.,;?: ");
+    assertEquals(
+        "_a_b_c_d_e_f!.,;?:S_a_b_c_d_e_f!.,;?:S_a_b_c_d_e_f!.,;?:S_a_b_c_d_e_f!.,;?:S_a_b_c_d_e_f!.,;?:S"
+            + "_a_b_c_d_e_f!.,;?:S_a_b_c_d_e_f!.,;?:S_a_b_c_",
+        elbonian.getText());
   }
-
 }
