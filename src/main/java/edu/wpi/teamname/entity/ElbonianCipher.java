@@ -1,5 +1,7 @@
 package edu.wpi.teamname.entity;
 
+import javafx.scene.control.TextArea;
+
 import java.io.CharArrayReader;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -8,6 +10,7 @@ import java.util.ArrayList;
 public class ElbonianCipher implements Observer {
 
   private String text = "";
+  private TextArea output;
 
   public void setText(String text) {
     String decoded = "";
@@ -75,6 +78,8 @@ public class ElbonianCipher implements Observer {
 
   @Override
   public void notify(Object object) {
-    this.setText(String.valueOf(object));
+    String objectString = (String) object;
+    setText(objectString);
+    output.setText(text);
   }
 }

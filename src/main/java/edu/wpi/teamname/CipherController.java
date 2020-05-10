@@ -2,11 +2,15 @@ package edu.wpi.teamname;
 
 import edu.wpi.teamname.entity.*;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 
+import java.net.URL;
+import java.util.ResourceBundle;
+
 /** Cipher application controller; don't modify this file (except for note below) */
-public class CipherController {
+public class CipherController implements Initializable {
 
   @FXML TextField textInputBox;
 
@@ -20,13 +24,33 @@ public class CipherController {
 
   public CipherController() {
     cleartext = new Message();
-    caesarCipher = new CaesarCipher();
-    elbonianCipher = new ElbonianCipher();
+
 
     /*
      * You may add additional code here if it relates to your observer pattern implementation.
      */
   }
+
+  @Override
+  public void initialize(URL url, ResourceBundle resourceBundle) {
+    caesarCipher = new CaesarCipher();
+    caesarCipher.setText(caesarTextOut.getText());
+    elbonianCipher = new ElbonianCipher();
+    elbonianCipher.setText(elbonianTextOut.getText());
+
+    cleartext.register(caesarCipher);
+    cleartext.register(elbonianCipher);
+
+    textInputBox.textProperty().addListener((observable, old, ne) -> {
+      if (ne.isBlank()) {
+        cleartext.setText("");
+      } else {
+        cleartext.setText(ne);
+      }
+    });
+
+  }
+
 
   /**
    * Runs once every time the text in the input box changes. Your observer pattern implementation
