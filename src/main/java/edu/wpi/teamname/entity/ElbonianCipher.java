@@ -1,7 +1,5 @@
 package edu.wpi.teamname.entity;
 
-import java.io.CharArrayReader;
-import java.io.IOException;
 import java.util.ArrayList;
 
 /** Elbonian cipher; you must implement the cipher and the observer pattern */
@@ -12,58 +10,96 @@ public class ElbonianCipher implements Observer {
   public void setText(String text) {
     String decoded = "";
     String alphabet = "abcdefghijklmnopqrstuvwxyz";
-    ArrayList<String> numberString = new ArrayList<>();
-    {
-      numberString.add("01");
-      numberString.add("02");
-      numberString.add("03");
-      numberString.add("04");
-      numberString.add("05");
-      numberString.add("06");
-      numberString.add("07");
-      numberString.add("08");
-      numberString.add("09");
-      numberString.add("10");
-      numberString.add("11");
-      numberString.add("12");
-      numberString.add("13");
-      numberString.add("14");
-      numberString.add("15");
-      numberString.add("16");
-      numberString.add("17");
-      numberString.add("18");
-      numberString.add("19");
-      numberString.add("20");
-      numberString.add("21");
-      numberString.add("22");
-      numberString.add("23");
-      numberString.add("24");
-      numberString.add("25");
-      numberString.add("26");
-    }
+    String capitals = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    ArrayList<Character> numberString = new ArrayList<>();
+    ArrayList<String> numbersPrint = new ArrayList<>();
+
+    numbersPrint.add("01");
+    numbersPrint.add("02");
+    numbersPrint.add("03");
+    numbersPrint.add("04");
+    numbersPrint.add("05");
+    numbersPrint.add("06");
+    numbersPrint.add("07");
+    numbersPrint.add("08");
+    numbersPrint.add("09");
+    numbersPrint.add("10");
+    numbersPrint.add("11");
+    numbersPrint.add("12");
+    numbersPrint.add("13");
+    numbersPrint.add("14");
+    numbersPrint.add("15");
+    numbersPrint.add("16");
+    numbersPrint.add("17");
+    numbersPrint.add("18");
+    numbersPrint.add("19");
+    numbersPrint.add("20");
+    numbersPrint.add("21");
+    numbersPrint.add("22");
+    numbersPrint.add("23");
+    numbersPrint.add("24");
+    numbersPrint.add("25");
+    numbersPrint.add("26");
+    numberString.add('1');
+    numberString.add('2');
+    numberString.add('3');
+    numberString.add('4');
+    numberString.add('5');
+    numberString.add('6');
+    numberString.add('7');
+    numberString.add('8');
+    numberString.add('9');
     int counter = 0;
 
     for (char c : text.toCharArray()) {
-      counter++;
-      if (c < 'a' || c > 'z') {
-        // This is a number. check if 1 or 2 digits. change to letter
-        CharArrayReader reader = new CharArrayReader(text.toCharArray());
-        char[] dub = new char[2];
-        try {
-          reader.read(dub, counter, 2);
-        } catch (IOException e) {
-          e.printStackTrace();
+      if (counter >= 139) {
+        break;
+      } else {
+        if (c == '_') {
+          decoded += '0';
+        } else if (c == '0') {
+          decoded += '_';
+        } else if (c == ' ') {
+          decoded += 'S';
+        } else if (c == 'S') {
+          decoded += ' ';
         }
-        String finalDub = dub.toString();
-        int pos = numberString.indexOf(finalDub);
-        decoded += alphabet.charAt(pos);
-      } else if (c == ' ') {
-        // This is a space. Change it to an 'S'
-        decoded += 'S';
-      } else if ((c > 'a' || c < 'z') && c != ' ') {
-        // This is a letter. Change it to a number
-        int pos = alphabet.indexOf(c);
-        decoded += numberString.get(pos);
+        if (c == '1' || c == '2' || c == '3' || c == '4' || c == '5' || c == '6' || c == '7'
+            || c == '8' || c == '9') {
+          // This is a number. check if 1 or 2 digits. change to letter
+          int pos = numberString.indexOf(c);
+          decoded += alphabet.charAt(pos);
+        } else if (alphabet.indexOf(c) != (-1)) {
+          // This is a letter. Change it to a number
+          int pos = alphabet.indexOf(c);
+          decoded += numbersPrint.get(pos);
+        } else if (capitals.indexOf(c) != (-1) && c != 'S') {
+          // This is a capital letter. Change it to a number
+          int pos = capitals.indexOf(c);
+          decoded += numbersPrint.get(pos);
+        }
+        if (c == ';') {
+          decoded += ';';
+        }
+        if (c == ':') {
+          decoded += ':';
+        }
+        if (c == ',') {
+          decoded += ',';
+        }
+        if (c == '.') {
+          decoded += '.';
+        }
+        if (c == '?') {
+          decoded += '?';
+        }
+        if (c == '!') {
+          decoded += '!';
+        }
+        if (c == '\'') {
+          decoded += '\'';
+        }
+        counter++;
       }
     }
     this.text = decoded;
