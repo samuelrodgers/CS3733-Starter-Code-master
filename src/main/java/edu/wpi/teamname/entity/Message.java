@@ -8,6 +8,8 @@ public class Message implements Observable {
 
   private ArrayList<Observer> observerList = new ArrayList<Observer>();
   private String text;
+  private CaesarCipher caesarCipher;
+  private ElbonianCipher elbonianCipher;
 
   public void setText(String text) {
     this.text = text;
@@ -20,7 +22,13 @@ public class Message implements Observable {
 
   @Override
   public void register(Observer o) {
-    observerList.add(o);
+    // observerList.add(o);
+    if (o.getClass() == CaesarCipher.class) {
+      this.caesarCipher = (CaesarCipher) o;
+    }
+    if (o.getClass() == ElbonianCipher.class) {
+      this.elbonianCipher = (ElbonianCipher) o;
+    }
   }
 
   @Override

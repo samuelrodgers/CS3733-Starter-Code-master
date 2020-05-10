@@ -1,11 +1,13 @@
 package edu.wpi.teamname.entity;
 
 import java.util.ArrayList;
+import javafx.scene.control.TextArea;
 
 /** Elbonian cipher; you must implement the cipher and the observer pattern */
 public class ElbonianCipher implements Observer {
 
   private String text = "";
+  private TextArea output;
 
   public void setText(String text) {
     String decoded = "";
@@ -111,6 +113,8 @@ public class ElbonianCipher implements Observer {
 
   @Override
   public void notify(Object object) {
-    this.setText(String.valueOf(object));
+    String objectString = (String) object;
+    setText(objectString);
+    output.setText(text);
   }
 }
