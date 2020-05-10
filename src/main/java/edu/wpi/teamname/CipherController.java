@@ -32,9 +32,9 @@ public class CipherController implements Initializable {
   @Override
   public void initialize(URL url, ResourceBundle resourceBundle) {
     caesarCipher = new CaesarCipher();
-    caesarCipher.setText(caesarTextOut.getText());
+    caesarCipher.setText(cleartext.getText());
     elbonianCipher = new ElbonianCipher();
-    elbonianCipher.setText(elbonianTextOut.getText());
+    elbonianCipher.setText(cleartext.getText());
 
     cleartext.register(caesarCipher);
     cleartext.register(elbonianCipher);
@@ -64,7 +64,9 @@ public class CipherController implements Initializable {
   /** Runs when the user clicks the 'Encode!' button */
   @FXML
   public void updateOutput() {
+    caesarCipher.setText(cleartext.getText());
     caesarTextOut.setText(caesarCipher.getText());
+    elbonianCipher.setText(cleartext.getText());
     elbonianTextOut.setText(elbonianCipher.getText());
   }
 }

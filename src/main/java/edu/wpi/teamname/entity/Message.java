@@ -7,7 +7,7 @@ import java.util.ArrayList;
 public class Message implements Observable {
 
   private ArrayList<Observer> observerList = new ArrayList<Observer>();
-  private String text;
+  private String text = "";
   private CaesarCipher caesarCipher;
   private ElbonianCipher elbonianCipher;
 

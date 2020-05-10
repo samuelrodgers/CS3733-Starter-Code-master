@@ -1,12 +1,9 @@
 package edu.wpi.teamname.entity;
 
-import javafx.scene.control.TextArea;
-
 /** Caesar cipher; you must implement the cipher and the observer pattern */
 public class CaesarCipher implements Observer {
 
   String text = "";
-  private TextArea output;
 
   public void setText(String text) {
     String decoded = "";
@@ -211,6 +208,5 @@ public class CaesarCipher implements Observer {
   public void notify(Object object) {
     String objectString = (String) object;
     setText(objectString);
-    output.setText(text);
   }
 }
